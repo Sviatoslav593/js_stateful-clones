@@ -33,6 +33,8 @@ function transformStateWithClones(state, actions) {
       case 'clear':
         stateCopy = {};
         break;
+      default:
+        throw new Error('Invalid type');
     }
     history.push({ ...stateCopy });
     prevState = { ...stateCopy };
